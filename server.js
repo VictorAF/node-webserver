@@ -91,6 +91,12 @@ app.get('/bad', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs',{
+    pageTitle: 'Projects'
+  });
+});
+
 // For example, Heroku has enviromental variables like the port
 app.listen(port, ()=>{
   console.log(`Server is up on port ${port}`);
