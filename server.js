@@ -2,6 +2,9 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// Configured to run in HEROKU or LOCAL
+const port = process.env.PORT || 3000;
+
 var app = express();
 
 
@@ -88,6 +91,7 @@ app.get('/bad', (req, res) => {
   });
 });
 
-app.listen(3000, ()=>{
-  console.log('Server is up on port 3000');
+// For example, Heroku has enviromental variables like the port
+app.listen(port, ()=>{
+  console.log(`Server is up on port ${port}`);
 });
